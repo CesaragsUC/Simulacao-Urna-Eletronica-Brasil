@@ -1,0 +1,186 @@
+	//Cenario Honesto
+	while (totalEleitores < 10)
+	{
+		std::cout << "\n";
+		std::cout << "Digite Numero do Candidato:" << "\n";
+		std::cin >> Numero;
+
+		std::cout << "\n";
+		
+		std::cout << "Confirmar: " << Numero <<  " Sim [s] ou [n] Nao \n";
+		key_press = _getch();
+		ascii_value = key_press;
+
+		if (ascii_value == 115)
+		{
+			if (Numero == 13)
+				Lula++;
+				
+			if (Numero == 0)
+				NuloBranco++;
+			
+			if (Numero == 17)
+				Bolsonaro++;
+
+			std::cout << "Voto Confirmado. \n";
+			PlaySound("urna.wav", NULL, SND_SYNC);
+		}
+		else if (ascii_value == 110)
+		{
+			continue;
+		}
+		else {
+			std::cout << " Tecla incorreta \n";
+			continue;
+		}
+
+		totalEleitores++;
+		
+		clear();
+		std::cout << "Total Votos: " << totalEleitores << " \n";
+
+		std::cout << "\n";
+
+		std::cout << "Lula: " << Lula << "\n";
+		std::cout << "Bolsonaro: " << Bolsonaro << "\n";
+		std::cout << "Nulo ou Branco: " << NuloBranco << "\n";
+	}
+	
+	------------------------------------------------------------------------------------------------
+	
+   //Cenario Hackeado
+	while (totalEleitores < 10)
+	{
+		std::cout << "\n";
+		std::cout << "Digite Numero do Candidato:" << "\n";
+		std::cin >> Numero;
+
+		std::cout << "\n";
+
+		std::cout << "Confirmar: " << Numero << " Sim [s] ou [n] Nao \n";
+		key_press = _getch();
+		ascii_value = key_press;
+
+		if (ascii_value == 115)
+		{
+			if (Numero == 13)
+				Lula++;
+
+			if (Numero == 0)
+				Lula++;
+
+			//if (Numero == 0)
+			//	NuloBranco++;
+
+			if (Numero == 17)
+			{
+				if (Bolsonaro < Lula)
+					Bolsonaro++;
+				else
+				{
+					Lula++;
+				}
+
+			}
+
+			std::cout << "Voto Confirmado. \n";
+			PlaySound("urna.wav", NULL, SND_SYNC);
+			//Sleep(1500);
+		}
+		else if (ascii_value == 110)
+		{
+			continue;
+		}
+		else {
+			std::cout << " Tecla incorreta \n";
+			continue;
+		}
+
+		totalEleitores++;
+		clear();
+		std::cout << "Total Votos: " << totalEleitores << " \n";
+
+		std::cout << "\n";
+
+		std::cout << "Lula: " << Lula << "\n";
+		std::cout << "Bolsonaro: " << Bolsonaro << "\n";
+		std::cout << "Nulo ou Branco: " << NuloBranco << "\n";
+	}
+	
+	----------------------------------------------------------
+	
+	
+	//Cenario Voto Impresso
+	while (totalEleitores < 10)
+	{
+		std::cout << "\n";
+		std::cout << "Digite Numero do Candidato:" << "\n";
+		std::cin >> Numero;
+
+		std::cout << "\n";
+
+		
+		std::cout << "Confirmar: " << Numero << " Sim [s] ou [n] Nao \n";
+		key_press = _getch();
+		ascii_value = key_press;
+
+		if (ascii_value == 115)
+		{
+			if (Numero == 13)
+			{
+				Lula++;
+				std::cout << "Seu voto foi Lula \n";
+			}
+
+			//if (Numero == 0)
+			//{
+			//	Lula++;
+			//	std::cout << "Seu voto foi Lula \n";
+			//}
+
+			if (Numero == 0)
+			{
+				NuloBranco++;
+				std::cout << "Seu voto foi Nulo \n";
+			}
+				
+
+			if (Numero == 17)
+			{
+				if (Bolsonaro < Lula)
+				{
+					Bolsonaro++;
+					std::cout << "Seu voto foi Bolsonaro \n";
+				}
+				else
+				{
+					std::cout << "Seu voto foi Lula \n";
+					Lula++;
+				}
+				
+
+			}
+
+			std::cout << "Voto Confirmado. \n";
+			PlaySound("urna.wav", NULL, SND_SYNC);
+			
+		}
+		else if (ascii_value == 110)
+		{
+			continue;
+		}
+		else {
+			std::cout << " Tecla incorreta \n";
+			continue;
+		}
+
+		totalEleitores++;
+		clear();
+		std::cout << "Total Votos: " << totalEleitores << " \n";
+
+		std::cout << "\n";
+
+		std::cout << "Lula: " << Lula << "\n";
+		std::cout << "Bolsonaro: " << Bolsonaro << "\n";
+		std::cout << "Nulo ou Branco: " << NuloBranco << "\n";
+	}
